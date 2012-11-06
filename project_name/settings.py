@@ -177,3 +177,6 @@ try:
     from localsettings import *
 except ImportError:
     pass
+
+if DEBUG:
+    from debug_settings import *
