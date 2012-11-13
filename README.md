@@ -5,7 +5,7 @@ A Django project template based on [mbg-boilerplate](https://github.com/mgerring
 
 Requirements
 -----
-```pip```,```virtualenv```,```Django==1.4```
+pip, Django 1.4
 
 Usage
 -----
