@@ -1,5 +1,6 @@
 // Avoid `console` errors in browsers that lack a console.
 (function() {
+    var method;
     var noop = function noop() {};
     var methods = [
         'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
@@ -8,12 +9,16 @@
         'timeStamp', 'trace', 'warn'
     ];
     var length = methods.length;
-    var console = window.console || {};
+    var console = (window.console = window.console || {});
 
     while (length--) {
+        method = methods[length];
+
         // Only stub undefined methods.
-        console[methods[length]] = console[methods[length]] || noop;
+        if (!console[method]) {
+            console[method] = noop;
+        }
     }
 }());
 
-// Place any jQuery/helper plugins in here.
+// Place any Zepto/helper plugins in here.
